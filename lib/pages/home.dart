@@ -1,4 +1,3 @@
-import '/components/connectivity_listener.dart';
 import 'package:flutter/material.dart';
 import '/utils/context_ext.dart';
 import '/utils/text_utils.dart';
@@ -11,28 +10,26 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ConnectivityListener(
-      child: Scaffold(
-          floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-          floatingActionButton: FloatingActionButton(
-            onPressed: () => context.to(route: Next.route),
-            child: const Text('Next'),
-          ),
-          body: Container(
-              alignment: Alignment.center,
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text(
-                    TextUtils.loremQ1,
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-                  ),
-                  SizedBox(height: 10),
-                  Text(TextUtils.loremAns1),
-                ],
-              ))),
-    );
+    return Scaffold(
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => context.to(route: Next.route),
+          child: const Text('Next'),
+        ),
+        body: Container(
+            alignment: Alignment.center,
+            padding: const EdgeInsets.all(10),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Text(
+                  TextUtils.loremQ1,
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                ),
+                SizedBox(height: 10),
+                Text(TextUtils.loremAns1),
+              ],
+            )));
   }
 }

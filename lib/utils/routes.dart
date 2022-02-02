@@ -1,3 +1,4 @@
+import 'package:connection_listener/components/connectivity_listener.dart';
 import 'package:flutter/material.dart';
 import '../pages/home.dart';
 import '/pages/next.dart';
@@ -12,6 +13,7 @@ class Routes {
         return pageRoute(page: const Next(), routeName: Next.route);
 
       default:
+
         ///404 route
         return null;
     }
@@ -19,7 +21,7 @@ class Routes {
 
   static pageRoute({required Widget page, required String routeName}) =>
       MaterialPageRoute(
-        builder: (_) => page,
+        builder: (_) => ConnectivityListener(child: page),
         settings: RouteSettings(name: routeName),
       );
 }
